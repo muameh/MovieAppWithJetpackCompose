@@ -6,22 +6,24 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -38,13 +40,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import coil.ImageLoader
 import coil.compose.rememberAsyncImagePainter
-import coil.transform.CircleCropTransformation
 import com.mehmetbaloglu.movieappwithjetpackcompose.data.model.Movie
 import com.mehmetbaloglu.movieappwithjetpackcompose.data.model.getMovies
 import com.mehmetbaloglu.movieappwithjetpackcompose.ui.navigation.MovieScreens
@@ -96,18 +96,21 @@ fun MovieCard(movie: Movie, onItemClick: (String) -> Unit = {}) {
         elevation = CardDefaults.cardElevation(10.dp),
         shape = RoundedCornerShape(corner = CornerSize(16.dp)),
     ) {
-        Column(verticalArrangement = Arrangement.Center) {
+        Column(
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally) {
             Surface(
                 modifier = Modifier
                     .padding(1.dp)
-                    .wrapContentSize(),
+                    .fillMaxWidth(),
                 shape = RectangleShape,
                 tonalElevation = 4.dp,
 
                 ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Start
+                    horizontalArrangement = Arrangement.Start,
+                    modifier = Modifier.fillMaxWidth()
                 ) {
                     //Coil Usage
                     Image(
@@ -134,27 +137,57 @@ fun MovieCard(movie: Movie, onItemClick: (String) -> Unit = {}) {
                         )
                         if (expanded) {
                             Column {
-                                Text(text = "Hello there")
-                                Text(text = "Hello there")
-                                Text(text = "Hello there")
-                                Text(text = "Hello there")
-                                Text(text = "Hello there")
-                                Text(text = "Hello there")
+                                Text(
+                                    text = "Genre: ${movie.genre}",
+                                    style = MaterialTheme.typography.titleSmall
+                                )
+                                Text(
+                                    text = "Country: ${movie.country}",
+                                    style = MaterialTheme.typography.titleSmall
+                                )
+                                Text(
+                                    text = "Imdb Rating: ${movie.imdbRating}",
+                                    style = MaterialTheme.typography.titleSmall
+                                )
+
+                                Text(
+                                    text = "Runtime: ${movie.runtime}",
+                                    style = MaterialTheme.typography.titleSmall
+                                )
+                                HorizontalDivider(modifier = Modifier.width(100.dp).padding(3.dp))
+                                Text(
+                                    text = "Actors: ${movie.actors}",
+                                    style = MaterialTheme.typography.titleSmall,
+                                    modifier = Modifier,
+                                    overflow = TextOverflow.Ellipsis,
+                                    //maxLines = 2
+                                )
+                                HorizontalDivider(modifier = Modifier.width(100.dp).padding(3.dp))
+                                Text(
+                                    text = "Plot: ${movie.plot}",
+                                    style = MaterialTheme.typography.titleSmall,
+                                    modifier = Modifier,
+                                    overflow = TextOverflow.Ellipsis,
+                                    //maxLines = 2
+                                )
                             }
                         }
-
+                        Icon(
+                            imageVector = if (expanded) {
+                                Icons.Filled.KeyboardArrowUp
+                            } else {
+                                Icons.Filled.KeyboardArrowDown
+                            },
+                            contentDescription = "Down Arrow",
+                            modifier = Modifier
+                                .padding(10.dp)
+                                .size(25.dp)
+                                .clickable { expanded = !expanded },
+                            tint = Color.Red
+                        )
                     }
                     // Spacer to push the Icon to the right
                     Spacer(modifier = Modifier.weight(1f))
-                    Icon(
-                        imageVector = Icons.Filled.KeyboardArrowDown,
-                        contentDescription = "Down Arrow",
-                        modifier = Modifier
-                            .padding(10.dp)
-                            .size(25.dp)
-                            .clickable { expanded = !expanded },
-                        tint = Color.Red
-                    )
                 }
             }
         }
@@ -163,7 +196,7 @@ fun MovieCard(movie: Movie, onItemClick: (String) -> Unit = {}) {
 
 @Preview
 @Composable
-fun showcard(){
-    MovieCard(movie = getMovies()[0]){}
+fun showcard() {
+    MovieCard(movie = getMovies()[0]) {}
 }
 
