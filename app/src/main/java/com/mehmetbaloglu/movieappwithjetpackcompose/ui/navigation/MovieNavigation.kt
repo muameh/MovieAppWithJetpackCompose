@@ -1,4 +1,4 @@
-package com.mehmetbaloglu.movieappwithjetpackcompose.navigation
+package com.mehmetbaloglu.movieappwithjetpackcompose.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
@@ -6,8 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.mehmetbaloglu.movieappwithjetpackcompose.screens.DetailsScreen
-import com.mehmetbaloglu.movieappwithjetpackcompose.screens.HomeScreen
+import com.mehmetbaloglu.movieappwithjetpackcompose.ui.screens.DetailsScreen
+import com.mehmetbaloglu.movieappwithjetpackcompose.ui.screens.HomeScreen
 
 @Composable
 fun MovieNavigation() {

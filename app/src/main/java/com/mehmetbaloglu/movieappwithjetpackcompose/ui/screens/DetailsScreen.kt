@@ -1,4 +1,4 @@
-package com.mehmetbaloglu.movieappwithjetpackcompose.screens
+package com.mehmetbaloglu.movieappwithjetpackcompose.ui.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
@@ -49,7 +48,7 @@ fun DetailsScreen(navController: NavController, movieData: String?) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues), // Padding ekleyerek top bar alanını ayarladım
+                .padding(paddingValues),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

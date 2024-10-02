@@ -1,4 +1,4 @@
-package com.mehmetbaloglu.movieappwithjetpackcompose.navigation
+package com.mehmetbaloglu.movieappwithjetpackcompose.ui.navigation
 
 enum class MovieScreens(val screenName: String) {
     HomeScreen("HomeScreen"),

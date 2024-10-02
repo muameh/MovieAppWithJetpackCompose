@@ -1,0 +1,153 @@
+package com.mehmetbaloglu.movieappwithjetpackcompose.data.model
+
+data class Movie(
+    val actors: String?,
+    val awards: String?,
+    val comingSoon: Boolean?,
+    val country: String?,
+    val director: String?,
+    val genre: String?,
+    val imdbID: String?,
+    val imdbRating: String?,
+    val imdbVotes: String?,
+    val language: String?,
+    val metascore: String?,
+    val plot: String?,
+    val poster: String?,
+    val rated: String?,
+    val released: String?,
+    val response: String?,
+    val runtime: String?,
+    val title: String?,
+    val totalSeasons: String?,
+    val type: String?,
+    val writer: String?,
+    val year: String?,
+    val images: List<String?>?
+)
+
+
+//dummy data
+fun getMovies(): List<Movie> {
+    return listOf(
+        Movie(
+            actors = "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+            awards = "Won 3 Oscars. Another 80 wins & 121 nominations.",
+            comingSoon = null,
+            country = "USA, UK",
+            director = "James Cameron",
+            genre = "Action, Adventure, Fantasy",
+            imdbID = "tt0499549",
+            imdbRating = "7.9",
+            imdbVotes = "890,617",
+            language = "English, Spanish",
+            metascore = "83",
+            plot = "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+            poster = "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+            rated = "PG-13",
+            released = "18 Dec 2009",
+            response = "True",
+            runtime = "162 min",
+            title = "Avatar",
+            totalSeasons = null,
+            type = "movie",
+            writer = "James Cameron",
+            year = "2009",
+            images = listOf(
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BNzM2MDk3MTcyMV5BMl5BanBnXkFtZTcwNjg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY2ODQ3NjMyMl5BMl5BanBnXkFtZTcwODg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxOTEwNDcxN15BMl5BanBnXkFtZTcwOTg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMDg1Nzk1MV5BMl5BanBnXkFtZTcwMDk0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+            )
+        ),
+        Movie(
+            actors = "Will Smith, Alice Braga, Charlie Tahan, Salli Richardson-Whitfield",
+            awards = "9 wins & 21 nominations.",
+            comingSoon = null,
+            country = "USA",
+            director = "Francis Lawrence",
+            genre = "Drama, Horror, Sci-Fi",
+            imdbID = "tt0480249",
+            imdbRating = "7.2",
+            imdbVotes = "533,874",
+            language = "English",
+            metascore = "65",
+            plot = "Years after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in New York City struggles valiantly to find a cure.",
+            poster = "http://ia.media-imdb.com/images/M/MV5BMTU4NzMyNDk1OV5BMl5BanBnXkFtZTcwOTEwMzU1MQ@@._V1_SX300.jpg",
+            rated = "PG-13",
+            released = "14 Dec 2007",
+            response = "True",
+            runtime = "101 min",
+            title = "I Am Legend",
+            totalSeasons = null,
+            type = "movie",
+            writer = "Mark Protosevich (screenplay), Akiva Goldsman (screenplay), Richard Matheson (novel), John William Corrington, Joyce Hooper Corrington",
+            year = "2007",
+            images = listOf(
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI0NTI4NjE3NV5BMl5BanBnXkFtZTYwMDA0Nzc4._V1_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTIwMDg2MDU4M15BMl5BanBnXkFtZTYwMTA0Nzc4._V1_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc5MDM1OTU5OV5BMl5BanBnXkFtZTYwMjA0Nzc4._V1_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTA0MTI2NjMzMzFeQTJeQWpwZ15BbWU2MDMwNDc3OA@@._V1_.jpg"
+            )
+        ),
+        Movie(
+            actors = "Gerard Butler, Lena Headey, Dominic West, David Wenham",
+            awards = "16 wins & 42 nominations.",
+            comingSoon = null,
+            country = "USA",
+            director = "Zack Snyder",
+            genre = "Action, Drama, Fantasy",
+            imdbID = "tt0416449",
+            imdbRating = "7.7",
+            imdbVotes = "611,046",
+            language = "English",
+            metascore = "52",
+            plot = "King Leonidas of Sparta and a force of 300 men fight the Persians at Thermopylae in 480 B.C.",
+            poster = "http://ia.media-imdb.com/images/M/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3._V1_SX300.jpg",
+            rated = "R",
+            released = "09 Mar 2007",
+            response = "True",
+            runtime = "117 min",
+            title = "300",
+            totalSeasons = null,
+            type = "movie",
+            writer = "Zack Snyder (screenplay), Kurt Johnstad (screenplay), Michael Gordon (screenplay), Frank Miller (graphic novel), Lynn Varley (graphic novel)",
+            year = "2006",
+            images = listOf(
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMwNTg5MzMwMV5BMl5BanBnXkFtZTcwMzA2NTIyMw@@._V1_SX1777_CR0,0,1777,937_AL_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQwNTgyNTMzNF5BMl5BanBnXkFtZTcwNDA2NTIyMw@@._V1_SX1777_CR0,0,1777,935_AL_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc0MjQzOTEwMV5BMl5BanBnXkFtZTcwMzE2NTIyMw@@._V1_SX1777_CR0,0,1777,947_AL_.jpg"
+            )
+        ),
+        Movie(
+            actors = "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth",
+            awards = "Nominated for 1 Oscar. Another 34 wins & 75 nominations.",
+            comingSoon = null,
+            country = "USA",
+            director = "Joss Whedon",
+            genre = "Action, Sci-Fi, Thriller",
+            imdbID = "tt0848228",
+            imdbRating = "8.1",
+            imdbVotes = "1,003,301",
+            language = "English, Russian",
+            metascore = "69",
+            plot = "Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.",
+            poster = "http://ia.media-imdb.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SX300.jpg",
+            rated = "PG-13",
+            released = "04 May 2012",
+            response = "True",
+            runtime = "143 min",
+            title = "The Avengers",
+            totalSeasons = null,
+            type = "movie",
+            writer = "Joss Whedon (screenplay), Zak Penn (story), Joss Whedon (story)",
+            year = "2012",
+            images = listOf(
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ0MzM3NDc4OV5BMl5BanBnXkFtZTcwMjE4MDczOA@@._V1_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMjAzNzA5ODAwNF5BMl5BanBnXkFtZTcwMTAyNTM4OA@@._V1_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk5NjQ4NjQ3NF5BMl5BanBnXkFtZTcwMjA2NjA0OA@@._V1_.jpg"
+            )
+        )
+    )
+}
